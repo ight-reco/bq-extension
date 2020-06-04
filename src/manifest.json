@@ -1,0 +1,28 @@
+{
+  "name": "bq-extension",
+  "description": "A Vue.js web extension",
+  "version": null,
+  "manifest_version": 2,
+  "icons": {
+    "48": "icons/icon_48.png",
+    "128": "icons/icon_128.png"
+  },
+  "page_action": {
+    "default_title": "bq-extension"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://console.cloud.google.com/bigquery*"
+      ],
+      "js": [
+        "contents/contents.js"
+      ]
+    }
+  ]
+}
